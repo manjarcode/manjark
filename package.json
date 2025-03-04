@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git+https://github.com/manjarcode/manjark.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
