@@ -4,6 +4,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manjarcode/manjark.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
