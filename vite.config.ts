@@ -18,6 +18,10 @@ export default defineConfig({
     rollupOptions: {
       external: ["react", "react-dom", "@ark-ui/react"],
       output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name?.endsWith(".css")) return "index.css"; // Genera un archivo CSS separado
+          return assetInfo.name!;
+        },
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
@@ -25,5 +29,6 @@ export default defineConfig({
         },
       },
     },
+    cssCodeSplit: true
   },
 });

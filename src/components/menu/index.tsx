@@ -2,7 +2,7 @@ import { Menu as ArkMenu } from "@ark-ui/react/menu"
 import { ChevronDown } from "lucide-react"
 import { ReactNode } from "react"
 
-export const MenuRoot = ({ children }: { children: ReactNode }) => (
+export const Menu = ({ children }: { children: ReactNode }) => (
   <ArkMenu.Root>
     <ArkMenu.Trigger className="w-10 h-10 bg-gray-200 text-black rounded-sm hover:bg-gray-300 flex items-center justify-center p-0 m-0 focus-visible:outline-gray-400">
       <ChevronDown size={16} />
@@ -15,13 +15,13 @@ export const MenuRoot = ({ children }: { children: ReactNode }) => (
   </ArkMenu.Root>
 )
 
-export const MenuItem = ({ children, value }: { children: ReactNode; value: string }) => (
+Menu.Item = ({ children, value }: { children: ReactNode; value: string }) => (
   <ArkMenu.Item className="p-2 hover:bg-gray-200 cursor-pointer" value={value}>
     {children}
   </ArkMenu.Item>
 )
 
-export const MenuItemLink = ({
+Menu.ItemLink = ({
   children,
   href,
   value,
@@ -39,8 +39,3 @@ export const MenuItemLink = ({
     </a>
   </ArkMenu.Item>
 )
-
-export const Menu = Object.assign(MenuRoot, {
-  Item: MenuItem,
-  ItemLink: MenuItemLink,
-})

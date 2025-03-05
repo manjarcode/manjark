@@ -6,6 +6,7 @@
   "main": "dist/index.es.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "style": "dist/index.css",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manjarcode/manjark.git"
