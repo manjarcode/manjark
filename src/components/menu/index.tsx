@@ -15,8 +15,8 @@ export const Menu = ({ children }: { children: ReactNode }) => (
   </ArkMenu.Root>
 )
 
-Menu.Item = ({ children, value }: { children: ReactNode; value: string }) => (
-  <ArkMenu.Item className="p-2 hover:bg-gray-200 cursor-pointer" value={value}>
+Menu.Item = ({ children, value, ...props }: { children: ReactNode; value: string }) => (
+  <ArkMenu.Item className="p-2 hover:bg-gray-200 cursor-pointer" value={value} {...props}>
     {children}
   </ArkMenu.Item>
 )
@@ -25,12 +25,13 @@ Menu.ItemLink = ({
   children,
   href,
   value,
+  ...props
 }: {
-  children: ReactNode;
-  href: string;
-  value: string;
+  children: ReactNode
+  href: string
+  value: string
 }) => (
-  <ArkMenu.Item value={value} className="p-0">
+  <ArkMenu.Item value={value} className="p-0" {...props}>
     <a
       href={href}
       className="block p-2 hover:bg-gray-200 cursor-pointer text-black no-underline focus-visible:outline-gray-400"

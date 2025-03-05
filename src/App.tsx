@@ -5,9 +5,9 @@ function App() {
   return (
     <>
       <Menu>
-        <Menu.ItemLink value="home" href="/">
+        <Menu.Item value="home" onClick={() => console.log('Home clicked')}>
           Home
-        </Menu.ItemLink>
+        </Menu.Item>
         <Menu.ItemLink value="about" href="/about">
           About
         </Menu.ItemLink>
