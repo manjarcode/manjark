@@ -1,9 +1,11 @@
 {
   "name": "manjark",
   "author": "ManjarCode",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.2",
   "type": "module",
+  "main": "dist/index.es.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manjarcode/manjark.git"
