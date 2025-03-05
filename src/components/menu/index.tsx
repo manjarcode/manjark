@@ -1,6 +1,6 @@
 import { Menu as ArkMenu } from "@ark-ui/react/menu"
 import { ChevronDown } from "lucide-react"
-import { ReactNode } from "react"
+import { ReactNode, HTMLProps } from "react"
 
 export const Menu = ({ children }: { children: ReactNode }) => (
   <ArkMenu.Root>
@@ -15,22 +15,18 @@ export const Menu = ({ children }: { children: ReactNode }) => (
   </ArkMenu.Root>
 )
 
-Menu.Item = ({ children, value, ...props }: { children: ReactNode; value: string }) => (
+Menu.Item = ({ children, value, ...props }: MenuItemProps) => (
   <ArkMenu.Item className="p-2 hover:bg-gray-200 cursor-pointer" value={value} {...props}>
     {children}
   </ArkMenu.Item>
 )
 
-Menu.ItemLink = ({
-  children,
-  href,
-  value,
-  ...props
-}: {
+type MenuItemProps = {
   children: ReactNode
-  href: string
   value: string
-}) => (
+} & HTMLProps<HTMLDivElement>
+
+Menu.ItemLink = ({ children, href, value, ...props}: MenuItemLinkProps) => (
   <ArkMenu.Item value={value} className="p-0" {...props}>
     <a
       href={href}
@@ -40,3 +36,9 @@ Menu.ItemLink = ({
     </a>
   </ArkMenu.Item>
 )
+
+type MenuItemLinkProps = {
+  children: ReactNode
+  href: string
+  value: string
+} & HTMLProps<HTMLDivElement>
