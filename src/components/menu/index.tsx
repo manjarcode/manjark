@@ -8,7 +8,7 @@ export const Menu = ({ children }: { children: ReactNode }) => (
       <ArkMenu.Trigger className="w-10 h-10 bg-gray-200 text-black rounded-sm hover:bg-gray-300 flex items-center justify-center p-0 m-0 focus-visible:outline-gray-400">
         <ChevronDown size={16} />
       </ArkMenu.Trigger>
-      <ArkMenu.Content className="absolute right-0 top-full bg-gray-100 shadow-md rounded-sm border border-gray-300 w-40 p-0 focus-visible:outline-gray-400">
+      <ArkMenu.Content className="absolute right-0 top-full z-10 bg-gray-100 shadow-md rounded-sm border border-gray-300 w-40 p-0 focus-visible:outline-gray-400">
         {children}
       </ArkMenu.Content>
     </div>
