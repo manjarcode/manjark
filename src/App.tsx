@@ -1,7 +1,6 @@
 import { Menu } from './components/menu'
 
 function App() {
-
   return (
     <>   
       <div style={{display:'flex'}}>
