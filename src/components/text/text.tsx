@@ -1,7 +1,7 @@
 
 import { HTMLProps, ReactNode } from 'react';
 
-export default function Text ({children, as: ElementType = 'p', className, ...props}: TextProps) {
+export const Text = ({children, as: ElementType = 'p', className, ...props}: TextProps) => {
   const calculatedClassName = className ?? 'text-[1em]'
   return (
     <ElementType {...props} className={calculatedClassName}>

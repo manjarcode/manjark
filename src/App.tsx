@@ -1,6 +1,6 @@
 import { Textbox } from './components/textbox/textbox'
 import { Menu } from './components/menu/menu'
-import Text from './components/text/text'
+import {Text} from './components/text/text'
 
 function App() {
   return (
