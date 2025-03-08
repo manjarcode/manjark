@@ -1,4 +1,5 @@
 import './index.css';
 
-export * from './components/menu'
-export * from './components/input/input'
+export * from './components/menu/menu'
+export * from './components/text/text'
+export * from './components/textbox/textbox'

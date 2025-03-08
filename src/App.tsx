@@ -1,5 +1,6 @@
-import { Input } from './components/input/input'
-import { Menu } from './components/menu'
+import { Textbox } from './components/textbox/textbox'
+import { Menu } from './components/menu/menu'
+import Text from './components/text/text'
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
         </Menu>
       </div>
 
-      <Input label='Label' placeholder='placeholder' />
+      <Textbox label='Label' placeholder='placeholder' />
+      <Text.Title as='h1'>Hello World</Text.Title>
+      <Text>Hola esto es mi texto gracias!</Text>
     </>
   )
 }

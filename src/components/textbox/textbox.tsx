@@ -1,10 +1,10 @@
 import { Field } from '@ark-ui/react/field'
 
-export const Input = ({label, placeholder, description, className, value, onChange}: InputProps) => {
+export const Textbox = ({label, placeholder, description, className, value, onChange}: TextboxProps) => {
   return (
     <Field.Root className={className}>
       {label && 
-        <Field.Label className="text-sm font-medium text-gray-700 block mb-2">
+        <Field.Label className="font-medium text-gray-700 block mb-2">
           {label}
         </Field.Label>
       }
@@ -17,19 +17,16 @@ export const Input = ({label, placeholder, description, className, value, onChan
       />
 
       {description && 
-        <Field.HelperText className="block text-xs text-gray-500 mb-2">
+        <Field.HelperText className="block text-gray-500 mb-2">
           {description}
         </Field.HelperText>
       }      
-      <Field.ErrorText className="block text-xs text-red-500">
-        Error Info Here
-      </Field.ErrorText>
     </Field.Root>
   )
 }
 
 
-type InputProps = {
+type TextboxProps = {
   label?: string
   placeholder?: string
   description?: string
