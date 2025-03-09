@@ -1,8 +1,11 @@
 import { Textbox } from './components/textbox/textbox'
 import { Menu } from './components/menu/menu'
 import {Text} from './components/text/text'
+import { ToggleGroup } from './components/tooglegroup/tooglegroup'
+import { useState } from 'react'
 
 function App() {
+  const [value, setValue] = useState<string[]>([])
   return (
     <>   
       <div style={{display:'flex'}}>
@@ -24,6 +27,11 @@ function App() {
       <Textbox label='Label' placeholder='placeholder' description='esto tambien' />
       <Text.Title as='h1'>Hello World</Text.Title>
       <Text>Hola esto es mi texto gracias!</Text>
+      <ToggleGroup onChange={dto => setValue(dto.value)} value={value}>
+        <ToggleGroup.Item value="uno">Uno</ToggleGroup.Item>
+        <ToggleGroup.Item value="dos">Dos</ToggleGroup.Item>
+        <ToggleGroup.Item value="tres">Tres</ToggleGroup.Item>
+      </ToggleGroup>
     </>
   )
 }
