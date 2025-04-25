@@ -23,7 +23,7 @@ function App() {
         </Menu>
       </div>
 
-      <Textbox label='Label' placeholder='placeholder' description='esto es una description' />
+      <Textbox label='Label' placeholder='placeholder' description='esto es una description' suffix="€" className="w-max"/>
       <Textbox label='Label' placeholder='placeholder' description='esto tambien' />
       <Text.Title as='h1'>Hello World</Text.Title>
       <Text>Hola esto es mi texto gracias!</Text>
