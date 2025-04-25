@@ -10,7 +10,7 @@ export const ToggleGroup = ({children, value, className, onChange, ...props}: To
   )
 }
 
-ToggleGroup.Item = ({children, value, className, ...props}: ToggleGroupItemProps) => {
+const ToggleGroupItem = ({children, value, className, ...props}: ToggleGroupItemProps) => {
   const customClassName = `cursor-pointer p-2 bg-gray-200 text-black hover:bg-gray-300 flex items-center justify-center focus-visible:outline-gray-400 data-[state=on]:bg-gray-400 data-[state=on]:text-white first:rounded-l-sm last:rounded-r-sm ${className}`
   return (<ArkToggleGroup.Item
     value={value}
@@ -20,6 +20,8 @@ ToggleGroup.Item = ({children, value, className, ...props}: ToggleGroupItemProps
     {children}
   </ArkToggleGroup.Item>)
 }
+
+ToggleGroup.Item = ToggleGroupItem
 
 type ToggleGroupProps = {
   children: React.ReactNode,

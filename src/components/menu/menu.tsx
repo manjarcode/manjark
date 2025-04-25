@@ -15,7 +15,7 @@ export const Menu = ({ children }: { children: ReactNode }) => (
   </ArkMenu.Root>
 )
 
-Menu.Item = ({ children, value, ...props }: MenuItemProps) => (
+const MenuItem = ({ children, value, ...props }: MenuItemProps) => (
   <ArkMenu.Item className="p-2 hover:bg-gray-200 cursor-pointer" value={value} {...props}>
     {children}
   </ArkMenu.Item>
@@ -26,7 +26,7 @@ type MenuItemProps = {
   value: string
 } & HTMLProps<HTMLDivElement>
 
-Menu.ItemLink = ({ children, href, value, ...props}: MenuItemLinkProps) => (
+const MenuItemLink = ({ children, href, value, ...props}: MenuItemLinkProps) => (
   <ArkMenu.Item value={value} className="p-0" {...props}>
     <a
       href={href}
@@ -40,5 +40,9 @@ Menu.ItemLink = ({ children, href, value, ...props}: MenuItemLinkProps) => (
 type MenuItemLinkProps = {
   children: ReactNode
   href: string
-  value: string
+  value: string,
 } & HTMLProps<HTMLDivElement>
+
+
+Menu.Item = MenuItem
+Menu.ItemLink = MenuItemLink

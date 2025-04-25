@@ -1,4 +1,4 @@
-import './index.css';
+import './index.css'
 
 export * from './components/menu/menu'
 export * from './components/text/text'
