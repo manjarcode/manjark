@@ -5,11 +5,11 @@ import { ToggleGroup } from './components/tooglegroup/tooglegroup'
 import { useState } from 'react'
 
 function App() {
-  const [value, setValue] = useState<string[]>([])
+  const [value, setValue] = useState<string>('')
   return (
     <>   
       <div style={{display:'flex'}}>
-        Esto es una prueba
+        Menu
         <Menu>
           <Menu.Item value="home" onClick={() => console.log('Home clicked')}>
             Home
@@ -27,7 +27,10 @@ function App() {
       <Textbox label='Label' placeholder='placeholder' description='esto tambien' />
       <Text.Title as='h1'>Hello World</Text.Title>
       <Text>Hola esto es mi texto gracias!</Text>
-      <ToggleGroup label="Esto es el label" onChange={dto => setValue(dto.value)} value={value}>
+      <ToggleGroup label="Esto es el label" onChange={value => {
+          console.log('value', value)
+          setValue(value)
+        }} value={value}>
         <ToggleGroup.Item value="uno">Uno</ToggleGroup.Item>
         <ToggleGroup.Item value="dos">Dos</ToggleGroup.Item>
         <ToggleGroup.Item value="tres">Tres</ToggleGroup.Item>

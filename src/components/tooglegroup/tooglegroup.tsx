@@ -3,9 +3,15 @@ import { type ToggleGroupValueChangeDetails } from "@ark-ui/react"
 
 export const ToggleGroup = ({children, value, label, className, onChange, ...props}: ToggleGroupProps) => {
   const customClassName = `flex ${className}`
+  const handleValueChange = (details: ToggleGroupValueChangeDetails) => {
+    const selectedValue = details?.value[0]
+    if (onChange) {
+      onChange(selectedValue)
+    }
+  }
   return (
     <>{label && <label className="block mb-1">{label}</label>}
-    <ArkToggleGroup.Root className={customClassName} onValueChange={onChange} value={value} {...props}>
+    <ArkToggleGroup.Root className={customClassName} onValueChange={handleValueChange} value={[value]} {...props}>
       {children}
     </ArkToggleGroup.Root>
     </>
@@ -27,10 +33,10 @@ ToggleGroup.Item = ToggleGroupItem
 
 type ToggleGroupProps = {
   children: React.ReactNode,
-  value: string[],
+  value: string,
   label?: string,
   className?: string,
-  onChange?: (details: ToggleGroupValueChangeDetails) => void,
+  onChange?: (arg0: string) => void,
 }
 
 type ToggleGroupItemProps = {
