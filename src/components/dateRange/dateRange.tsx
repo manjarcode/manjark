@@ -43,13 +43,6 @@ const capitalizeFirstLetter = (str: string) => {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-export const initalDateRange = (): DateRangeType => {
-  const today = new Date()
-  const start = new Date(today.getFullYear(), today.getMonth(), 1)
-  const end = new Date(today.getFullYear(), today.getMonth() + 1, 0)
-  return { start, end }
-}
-
 type DateRangeProps = {
   value: DateRangeType,
   className?: string,

@@ -31,4 +31,9 @@ export default defineConfig({
     },
     cssCodeSplit: true
   },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
 })

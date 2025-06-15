@@ -3,11 +3,12 @@ import { Menu } from './components/menu/menu'
 import { Text } from './components/text/text'
 import { ToggleGroup } from './components/tooglegroup/tooglegroup'
 import { useState } from 'react'
-import { DateRange, DateRangeType, initalDateRange } from './components/dateRange/dateRange'
+import { DateRange, DateRangeType } from './components/dateRange/dateRange'
+import { initialDateRange } from './utils'
 
 function App() {
   const [value, setValue] = useState<string>('')
-  const [dateRange, setDateRange] = useState<DateRangeType>(initalDateRange())
+  const [dateRange, setDateRange] = useState<DateRangeType>(initialDateRange())
   return (
     <>   
       <div style={{display:'flex'}}>
