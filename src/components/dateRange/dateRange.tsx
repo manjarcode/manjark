@@ -21,9 +21,9 @@ export const DateRange = ({value, className, onChange } : DateRangeProps)  => {
 
   return (
     <div className={`flex items-center gap-2 border-1 border-primary rounded-sm w-fit ${className}`}>
-      <button className={buttonClass} onClick={handlePrevMonth}> &lt;</button>
+      <button type="button" className={buttonClass} onClick={handlePrevMonth}> &lt;</button>
       <span className="min-w-40 text-center">{getMonthName(value.start)}</span>
-      <button className={buttonClass} onClick={handleNextMonth}> &gt;</button>
+      <button type="button" className={buttonClass} onClick={handleNextMonth}> &gt;</button>
     </div>
   )
 }
