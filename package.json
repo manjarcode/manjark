@@ -1,6 +1,6 @@
 {
   "name": "manjark",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "author": "ManjarCode",
   "type": "module",
   "main": "dist/index.es.js",

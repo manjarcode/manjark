@@ -5,7 +5,14 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: 'var(--color-primary)',
+        'primary-hover': 'var(--color-primary-hover)',
+        black: 'var(--color-black)',
+        white: 'var(--color-white)',
+      },
+    },
   },
   plugins: [],
 }

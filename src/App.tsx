@@ -1,11 +1,13 @@
 import { Textbox } from './components/textbox/textbox'
 import { Menu } from './components/menu/menu'
-import {Text} from './components/text/text'
+import { Text } from './components/text/text'
 import { ToggleGroup } from './components/tooglegroup/tooglegroup'
 import { useState } from 'react'
+import { DateRange, DateRangeType, initalDateRange } from './components/dateRange/dateRange'
 
 function App() {
   const [value, setValue] = useState<string>('')
+  const [dateRange, setDateRange] = useState<DateRangeType>(initalDateRange())
   return (
     <>   
       <div style={{display:'flex'}}>
@@ -35,6 +37,11 @@ function App() {
         <ToggleGroup.Item value="dos">Dos</ToggleGroup.Item>
         <ToggleGroup.Item value="tres">Tres</ToggleGroup.Item>
       </ToggleGroup>
+
+      <DateRange value={dateRange} onChange={(dateRange: DateRangeType) => setDateRange(dateRange)} />
+      <div className="mt-4">
+        <Text>Selected Date Range: {dateRange.start.toLocaleDateString()} - {dateRange.end.toLocaleDateString()}</Text>
+      </div>
     </>
   )
 }
